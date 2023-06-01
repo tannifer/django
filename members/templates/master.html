@@ -1,28 +1,48 @@
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="_csrf_parameter" content="_csrf" /><meta name="_csrf_header" content="X-CSRF-TOKEN" /><meta name="_csrf" content="034c725f-f3d7-40d2-8a7d-f57acfbbc947" /><meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
-    <meta charset="utf-8"/>
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="canonical" href="http://www.st-andrews.ac.uk">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="copyright" content="Copyright &copy; University of St Andrews"/>
-    <meta name="rating" content="general"/>
-    <meta name="dc.keywords" content="University"/>
-
-    <link href="//www.st-andrews.ac.uk/~cdn/dpl/1.26.0/styles/screen.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="//www.st-andrews.ac.uk/~cdn/dpl/1.26.0/styles/print.css" rel="stylesheet" type="text/css" media="print"/>
-    <!--[if lt IE 9]>
-    <link href="//www.st-andrews.ac.uk/~cdn/dpl/1.26.0/styles/ie.css" rel="stylesheet" type="text/css" media="screen" />
-    <![endif]-->
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanker page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+</head>
 <body>
-    <div class="sr-only">
-        <a class="skip" href="#content-begin">Skip to content</a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">{% block title %}{% endblock %}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   
+
+    <div class="container">
     {% block content %}
     {% endblock %}
 
-    <script type="text/javascript" src="//www.st-andrews.ac.uk/~cdn/dpl/1.26.0/scripts/core.js"></script>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -6,6 +6,8 @@ My wankey Club list of members
 {%block content%}
  <h1>Members</h1>
 
+<p><a href="/"></a>HOME</p>
+
 <ul>
   {% for x in mymembers %}
     <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
