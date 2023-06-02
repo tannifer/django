@@ -30,4 +30,4 @@ def main(request):
 
 def json(request):
     mymembers = Member.objects.all().values()
-    return JsonResponse({"models_to_return" : list(mymembers)})
+    return JsonResponse({"data" : list(mymembers)})
