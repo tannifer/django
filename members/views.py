@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.http import JsonResponse
 from .models import Member
 
 
@@ -26,3 +27,7 @@ def main(request):
     template = loader.get_template('main.html')
     return HttpResponse(template.render())
 
+
+def json(request):
+    mymembers = Member.objects.all().values()
+    return JsonResponse({"models_to_return" : list(mymembers)})
