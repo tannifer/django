@@ -31,3 +31,10 @@ def main(request):
 def json(request):
     mymembers = Member.objects.all().values()
     return JsonResponse({"data" : list(mymembers)})
+
+def testing(request):
+    template = loader.get_template('template.html')
+    context = {
+        'firstname' : 'Linus'
+    }
+    return HttpResponse(template.render(context,request))
